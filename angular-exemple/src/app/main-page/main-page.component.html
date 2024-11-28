@@ -1,0 +1,11 @@
+<div>
+  <button (click)="showLogin = true">Login</button>
+  <button (click)="showLogin = false">Registrar</button>
+
+  @if (showLogin) {
+    <login-form></login-form>
+  } @else {
+    <register-form></register-form>
+  }
+  
+</div>
