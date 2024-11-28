@@ -1,11 +1,25 @@
+<!--
+
+EXERCICIO
+-Iremos fazer um simples login e registro.
+-Faça um componente chamado login-form que possui Email e Senha.
+-Faça um componente chamado register-form que usa o login-form e adiciona um campo repetir senha e edv.
+-Faça um componente chamado main-page que usa um if para renderizar ou o login-form ou o register-form a depender de um boleano na main-page.
+-Não precisa ter o login propriamente dito. Mas use um alert para mostrar os dados quando o usuário clicar em logar ou registrar.
+-Os botões de login e regitrar ficam na main-page.
+
+-->
+
 <div>
-  <button (click)="showLogin = true">Login</button>
-  <button (click)="showLogin = false">Registrar</button>
+  <div class="container">
+      <button class="botao" (click)="showLogin = true">Login</button>
+      <button class="botao" (click)="showLogin = false">Registrar</button>
+  </div>
 
   @if (showLogin) {
     <login-form></login-form>
   } @else {
     <register-form></register-form>
   }
-  
+
 </div>

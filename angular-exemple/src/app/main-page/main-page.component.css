@@ -1,0 +1,35 @@
+.container{
+
+  justify-content: space-around;
+  display: flex;
+}
+
+.botao {
+  border: solid 1px blue;
+  border-radius: 20px;
+  color: blue;
+  background-color: white;
+  transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease;
+  padding: 5px 10px; /* Ajuste de espaçamento interno */
+  cursor: pointer; /* Mostra o cursor de ponteiro ao passar pelos botões */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.botao:hover {
+    animation: none;
+}
