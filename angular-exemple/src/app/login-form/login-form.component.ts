@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 })
 export class LoginFormComponent {
 
-  _fb = inject(FormBuilder) // injetar as dependencias
+  form = inject(FormBuilder) // injetar as dependencias
 
-  login = this._fb.group({
-    nome: ["", Validators.required],
+  login = this.form.group({
+    email: ["", Validators.required, Validators.email],
     senha: ["", Validators.required],
   })
 

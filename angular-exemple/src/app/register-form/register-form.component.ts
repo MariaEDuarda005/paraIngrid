@@ -9,9 +9,9 @@ import { LoginFormComponent } from "../login-form/login-form.component";
   styleUrl: './register-form.component.css'
 })
 export class RegisterFormComponent {
-  private fb = inject(FormBuilder);
+  private form = inject(FormBuilder);
 
-  registerForm: FormGroup = this.fb.group({
+  registerForm: FormGroup = this.form.group({
     senha: ['', Validators.required],
     edv: ['', Validators.required],
   });
@@ -25,3 +25,5 @@ export class RegisterFormComponent {
     }
   }
 }
+
+

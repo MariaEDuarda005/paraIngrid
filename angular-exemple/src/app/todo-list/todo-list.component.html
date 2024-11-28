@@ -1,4 +1,6 @@
 @let nextItem = current.currentItem + ' (pressione Enter ou clique am Add para adicionar)';
+@let title = "title" | translate: lang | uppercase;
+@let placeholder = "placeholder" | translate: lang | lowercase;
 
 <h1>{{ title }}</h1>
 
@@ -13,3 +15,4 @@
 
 <!-- placeholder do add item é o mesmo do todo list -->
 <add-item (onSendInput)="addItem($event)" [placeholder]="placeholder" #current />
+<button (click)="alterarLang()">mudar tradução</button>

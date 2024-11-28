@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginFormComponent } from '../login-form/login-form.component';
 import { RegisterFormComponent } from '../register-form/register-form.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'main-page',
@@ -11,4 +12,13 @@ import { RegisterFormComponent } from '../register-form/register-form.component'
 })
 export class MainPageComponent {
   showLogin: boolean = true;
+
+  showAlert() {
+    Swal.fire({
+      title: 'Login Efetuado!',
+      text: 'ogin registrado',
+      icon: 'success',
+      confirmButtonText: 'OK'
+    });
+  }
 }

@@ -7,7 +7,7 @@ import { MainPageComponent } from "./main-page/main-page.component";
 
 @Component({
   selector: 'app-root',
-  imports: [MainPageComponent],
+  imports: [MainPageComponent, TodoListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
