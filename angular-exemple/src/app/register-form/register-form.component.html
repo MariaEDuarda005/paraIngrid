@@ -1,0 +1,9 @@
+<form [formGroup]="register">
+  <p>Confirmar senha</p>
+  <input type="text" [formControl]="register.controls.senha">
+
+  <p>EDV</p>
+  <input type="text" [formControl]="register.controls.edv">
+
+  <button (click)="submitForm()">send</button>
+</form>

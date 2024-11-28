@@ -1,0 +1,15 @@
+@let nextItem = current.currentItem + ' (pressione Enter ou clique am Add para adicionar)';
+
+<h1>{{ title }}</h1>
+
+<ul>
+    @for (item of items; track item){
+        <li>{{item}}</li>
+    }
+    @if (current.currentItem !== "") {
+      <li>{{nextItem}}</li>
+    }
+</ul>
+
+<!-- placeholder do add item é o mesmo do todo list -->
+<add-item (onSendInput)="addItem($event)" [placeholder]="placeholder" #current />

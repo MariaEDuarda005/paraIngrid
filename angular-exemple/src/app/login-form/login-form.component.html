@@ -1,0 +1,13 @@
+<form [formGroup]="login">
+  <p>Nome</p>
+  <input type="text" [formControl]="login.controls.nome">
+
+  <p>Senha</p>
+  <input type="text" [formControl]="login.controls.senha">
+
+   <!-- Botão único para submeter o formulário e redirecionar para a página de registro -->
+   <button (click)="submitAndRedirect()" [disabled]="!login.valid">Enviar e Registrar</button>
+</form>
+
+<!-- <p>Nome: {{ login.controls.nome.value }}</p>
+<p>Senha: {{ login.controls.senha.value }}</p> -->
