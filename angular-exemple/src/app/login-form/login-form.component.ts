@@ -10,10 +10,6 @@ import { Router } from '@angular/router';
 })
 export class LoginFormComponent {
 
-  constructor(
-    private router: Router
-  ){}
-
   _fb = inject(FormBuilder) // injetar as dependencias
 
   login = this._fb.group({
@@ -21,12 +17,4 @@ export class LoginFormComponent {
     senha: ["", Validators.required],
   })
 
-  submitAndRedirect() {
-    if (this.login.valid) {
-      alert('Formulário enviado com sucesso');
-      this.router.navigate(['/register'])
-    } else {
-      alert('Por favor, preencha todos os campos');
-    }
-  }
 }

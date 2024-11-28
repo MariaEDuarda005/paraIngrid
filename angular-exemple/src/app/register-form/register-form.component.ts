@@ -1,23 +1,25 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { LoginFormComponent } from "../login-form/login-form.component";
 
 @Component({
   selector: 'register-form',
-  imports: [ ReactiveFormsModule ],
+  imports: [ReactiveFormsModule, LoginFormComponent],
   templateUrl: './register-form.component.html',
   styleUrl: './register-form.component.css'
 })
 export class RegisterFormComponent {
-  _fb = inject(FormBuilder) // injetar as dependencias
+  private fb = inject(FormBuilder);
 
-  register = this._fb.group({
-    senha: ["", Validators.required],
-    edv: ["", Validators.required]
-  })
+  registerForm: FormGroup = this.fb.group({
+    senha: ['', Validators.required],
+    edv: ['', Validators.required],
+  });
 
   submitForm() {
-    if (this.register.valid) {
-      alert('Formulário enviado com sucesso');
+    if (this.registerForm.valid) {
+      const formData = this.registerForm.value;
+      alert(`Dados enviados: ${JSON.stringify(formData)}`);
     } else {
       alert('Por favor, preencha todos os campos');
     }
